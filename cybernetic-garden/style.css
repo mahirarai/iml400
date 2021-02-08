@@ -1,0 +1,139 @@
+html {
+    width: 100%;
+    height: auto%;
+    cursor: url('images/light.jpg'), auto;
+}
+
+#main {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url("images/meadow_dark.jpg");
+
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+    font-size: 30px;
+    color: white;
+    padding: 24px;
+    font-family: 'Krona One', sans-serif;
+}
+
+
+img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    opacity: 85%;
+}
+
+#text-main {
+    height: 50%;
+
+    margin-top: 9%;
+
+    text-align: left;
+    position: absolute;
+    padding: 8px;
+    margin-bottom: 9%;
+}
+
+#text-second {
+    height: 50%;
+    margin-top: 12%;
+    font-size: 20px;
+
+    text-align: left;
+    position: absolute;
+    padding: 8px;
+    margin-bottom: 9%;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 30px;
+    right: 100px;
+}
+
+.circle-red {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    top: 30px;
+    right: 160px;
+}
+
+.square {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.square-red {
+    height: 20px;
+    width: 20px;
+    background-color: purple;
+    position: absolute;
+    top: 30px;
+    left: 90px;
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid yellow;
+    position: absolute;
+    top: 30px;
+    left: 150px;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 20px solid purple;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 30px;
+    right: 220px;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid orange;
+    position: absolute;
+    top: 30px;
+    right: 280px;
+}
