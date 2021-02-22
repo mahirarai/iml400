@@ -21,20 +21,19 @@ $(document).ready(function () {
         "i like to listen",
         "i like to breathe"
     ]
-    //    var randWord = Math.floor(Math.random()*words.length);
-    //    $('#text-main').text(words[randWord]);
 
     var secondWords = [
-        "and think.",
-        "and feel.",
-        "and move.",
-        "and dream.",
-        "and rest.",
-        "and play.",
-        "and cry.",
-        "and listen.",
-        "and breathe."
+        "and think and",
+        "and feel and",
+        "and move and",
+        "and dream and",
+        "and rest and",
+        "and play and",
+        "and cry and",
+        "and listen and",
+        "and breathe and"
     ]
+
     var randWordSecond = Math.floor(Math.random() * secondWords.length);
     $('#text-second').text(secondWords[randWordSecond]);
 
@@ -43,16 +42,21 @@ $(document).ready(function () {
         $('#text-second').text(secondWords[randWordSecond]);
     })
 
-    $('.button').click(function () {
+    $('.button1').click(function () {
+        console.log("button clicked");
+
+        // change word
+        var randWord = Math.floor(Math.random() * words.length);
+        $('#text-main').text(words[randWord]);
+
+    })
+
+    $('#button-relocate').click(function () {
         console.log("button clicked");
 
         $("body").css('background-image', backgrounds[index]);
         console.log(index);
         console.log(backgrounds[index]);
-
-        // change word
-        var randWord = Math.floor(Math.random() * words.length);
-        $('#text-main').text(words[randWord]);
 
         // update index of background
         index++;
@@ -60,6 +64,14 @@ $(document).ready(function () {
             index = 0;
         }
     })
+
+    $('#button-about').click(function () {
+        $('#about').toggle();
+    });
+
+    $('#button-reset').click(function () {
+        location.reload();
+    });
 
 
     $(function () {
