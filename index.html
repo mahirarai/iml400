@@ -37,10 +37,24 @@
             font-size: 1.5em;
         }
 
+        img {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            width: 500px;
+        }
+
+        .caption {
+            padding-left: 20px;
+            width: 600px
+        }
+
         .notlive {
             text-decoration: line-through;
             opacity: 50%;
         }
+
+
 
         @keyframes bgcolor {
             0% {
@@ -65,11 +79,15 @@
         }
 
         footer {
+            margin-top: 100px;
+            /*
             position: absolute;
             bottom: 0;
             margin-bottom: 20px;
             font-size: .8em;
+*/
         }
+
 
         body {
             -webkit-animation: bgcolor 20s infinite;
@@ -98,25 +116,54 @@
         <br>
         <a href="cybernetic-garden/index.html" target="black">cybernatic garden: <em>I like to think</em></a>
         <br>
-        <a href="#" target="blank" class="notlive">collective digital care</a>
+        <a href="https://chakrasynth.glitch.me/" target="blank">collective digital care: <em>CHAKRASYNTH</em></a>
+        <br>
+        <img src="assets/chakrasynth-screenshot.png">
+        <div class="caption">
+            chakrasynth is an interactive digital sound healing interface. touch the screen to play a healing note associated with the current chakra. take some time to focus within yourself and breathe deeply along with the circle in the middle. use the affirmations that appear when you click and drag to draw across the page. you can feel the presence of others in the room through the hearts that appear as users visit and interact with the page. reload to target a different chakra.
+
+        </div>
         <br>
         <a href="#" target="blank" class="notlive">other worldbuilding</a>
         <br>
         <br>
         <strong>Exercises</strong>
-        <br>
-        <a href="#" target="black" class="notlive">p5.js sketch 1</a>
-        <br>
-        <a href="#" target="blank" class="notlive">p5.js sketch 2</a>
+        <div id="p5sketches" class="row">
+            <div class="frame">
+                <iframe src="https://editor.p5js.org/mahirar/embed/UVGtlzNBv"></iframe>
+            </div>
+            <div class="frame">
+                <iframe src="https://editor.p5js.org/mahirar/embed/KDIAhRdtS"></iframe>
+            </div>
+            <div class="frame">
+                <iframe src="https://editor.p5js.org/mahirar/embed/BUPOprcOn"></iframe>
+            </div>
+            <div class="frame">
+                <iframe src="https://editor.p5js.org/mahirar/embed/IG3Qyy2Hv"></iframe>
+            </div>
+            <div class="frame">
+                <iframe src="https://editor.p5js.org/mahirar/embed/QA0eHBIpM"></iframe>
+            </div>
+
+        </div>
+
         <br>
         <br>
         <strong>Thoughts</strong>
         <br>
         <a href="thoughts/cybernetics.html">cybernetics</a>
         <br>
-        <a href="thoughts/digitalcare.html">digital care</a>
+        <a href="thoughts/digitalcare.html">radical digital care</a>
+        <br>
+        <a href="thoughts/cyberfeminism.html">cyberfeminism</a>
+        <br>
+        <a href="thoughts/consentfultech.html">consentful tech</a>
+        <br>
+        <a href="thoughts/designjustice.html">design justice</a>
         <br>
     </div>
+
+    <script src="main.js"></script>
 
 </body>
 
