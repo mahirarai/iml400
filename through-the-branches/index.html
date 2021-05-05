@@ -1,98 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Through the branches</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <title>I have a question for you</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <script src="main.js"></script>
+    <style type="text/css">
+        body {
+            /*            background-image: linear-gradient(to right, #A779AE, #FFAF05);*/
+            background-color: #320196;
+            color: white;
+        }
+
+        #main {
+            width: 50%;
+            margin-top: 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #btn-click {
+            margin: 5%;
+        }
+
+        #question {
+            margin-top: 30%;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .vis {
+
+            /*            display: flex;*/
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #background {
+            padding: 5%;
+        }
+
+        @media (max-width: 991px) {
+            #main {
+                width: 60%;
+                margin-top: 25%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #main {
+                width: 70%;
+                margin-top: 30%;
+            }
+        }
+
+        @media (max-width: 575px) {
+            #main {
+                width: 80%;
+                margin-top: 40%;
+            }
+        }
+
+        }
+    </style>
 </head>
-
-<style type="text/css">
-    body {
-        background-color: #320196;
-        color: white;
-        font-family: 'Zen Dots', cursive;
-    }
-
-    .vis {
-        /*
-        display: flex;
-        justify-content: center;
-        align-items: center;
-*/
-    }
-
-    .interact {
-        height: 100vh;
-    }
-
-    .text {
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .fill-img {
-
-
-        top: 0px;
-        left: 0px;
-
-        position: fixed;
-
-        width: 100vw;
-        height: 100vh;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-attachment: fixed;
-        background-size: cover;
-        z-index: -1;
-    }
-
-    .top {
-        margin-top: 300px;
-        margin-bottom: 300px;
-    }
-
-</style>
 
 <body>
 
-    <!--https://hellopoetry.com/poem/395655/between-the-seaweed-branches-i-found-you/-->
-    <div class="top vis">
-        <iframe style="width: 100%; height: 1000px; overflow: hidden;" scrolling="no" frameborder="0" src="https://editor.p5js.org/mahirar/embed/0udSVfzdl"></iframe>
+    <div id="questionButton" class="fixed-top">
+        <button id="btn-click" class="btn btn-outline-light btn-sm">Through the branches, I found you</button>
+    </div>
+
+    <div id="main" class="align-middle">
+        <div id="question" class="align-middle words">
+            <h1></h1>
+        </div>
+    </div>
+
+    <div>
+        <div class="vis">
+            <iframe id="p5" style="width: 100%; height: 1000px; overflow: hidden;" scrolling="no" frameborder="0" src="https://editor.p5js.org/mahirar/embed/qcOJdKPKM"></iframe>
+        </div>
+        <div id="background" class="fixed-bottom">
+
+            <audio style="display:none;" loop autoplay>
+                <source src="assets/sea-waves-loop.ogg" type="audio/ogg">
+                <source src="assets/sea-waves-loop.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <button id="btn-warm" class="btn btn-outline-light btn-sm"> </button>
+            <button id="btn-cool" class="btn btn-outline-light btn-sm"> </button>
+        </div>
     </div>
 
 
-    <div class="vis">
-        <iframe style="width: 100%; height: 1000px; overflow: hidden;" scrolling="no" frameborder="0" src="https://editor.p5js.org/mahirar/embed/qcOJdKPKM"></iframe>
-    </div>
 
-    <div class=" vis">
-        <iframe style="width: 100%; height: 1000px; overflow: hidden;" scrolling="no" frameborder="0" src="https://editor.p5js.org/mahirar/embed/60_3Fx6tk"></iframe>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <div class="vis">
-        <iframe style="width: 100%; height: 1000px; overflow: hidden;" scrolling="no" frameborder="0" src="https://editor.p5js.org/mahirar/embed/VXcVZtVqT"></iframe>
-    </div>
+    <script type="text/javascript">
+        let questions = [];
+
+        loadQuestions();
+
+        $("#btn-click").on("click", function() {
+            let generate = Math.floor((Math.random() * questions.length));
+
+            $('#question').animate({
+                'opacity': 0
+            }, 300, function() {
+                $(this).text(questions[generate]);
+
+                questions.splice(generate, 1);
+
+                if (questions.length == 0) {
+                    loadQuestions();
+                }
+
+            }).animate({
+                'opacity': 1
+            }, 300);
+        });
 
 
+        document.querySelector("#btn-cool").onclick = function() {
+            console.log("Sketch changed");
+            document.getElementById("p5").src = "https://editor.p5js.org/mahirar/embed/qcOJdKPKM";
+        };
 
-    <audio style="display:none;" loop autoplay>
-        <source src="assets/sea-waves-loop.ogg" type="audio/ogg">
-        <source src="assets/sea-waves-loop.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
+        document.querySelector("#btn-warm").onclick = function() {
+            console.log("Sketch changed");
+            document.getElementById("p5").src = "https://editor.p5js.org/mahirar/embed/VXcVZtVqT";
+        };
 
+        function loadQuestions() {
+            questions = [];
+            questions = [
+                "What are you missing out on?",
+                "What used to be a pretty big deal to you?",
+                "What do you keep thinking about?",
+                "Who do you care about?",
+                "How do you care?",
+                "Where do you keep going back to?",
+                "What are you going through that people don't see?",
+                "Who do you feel the best around?",
+                "Is there a feeling you miss?",
+                "What are you still trying to prove to yourself?",
+                "What do you need right now that you aren't communicating?",
+                "What makes your heart feel heavy?",
+                "What makes your heart feel light?",
+                "Who do you consider a friend?",
+                "Who in your life deserves the biggest thank you?",
+                "Which one of your parents personality traits do you want to keep/let go of?",
+                "How does one earn your vulnerability?",
+                "What is something you've learned about yourself this week?",
+                "What about yourself can you improve?",
+                "What is your heart telling you?",
+                "What grounds your faith?",
+                "What are you denying yourself?",
+                "What do you enjoy?",
+                "What are you proud of?",
+                "What are you overthinking right now?",
+                "What do you hope for in the next week?",
+                "What takes you to another world?",
+                "What is an opportunity you are not taking?",
+                "What makes you smile?",
+                "How do you feel about distance right now?",
+                "What are you most afraid of? Why?",
+                "When was the last time you cried?",
+                "What are you looking forward to?",
+                "Whose company do you enjoy?",
+                "Where do you go for yourself?",
+                "How often do you look up?",
+                "How do you feel about today?",
+                "What are you most thankful for?",
+                "How do people see you?",
+                "How are you successful?",
+                "What about yourself do you love?",
+                "What do you need to let go of?",
+                "What inspires you?",
+                "What are you grateful for?",
+                "If you could change anything about the way you were raised, what would it be?",
+                "What do you pray for?",
+                "If you had the ability to erase something that you did in the past, what would it be?",
+                "What overwhelms you?",
+                "When do you feel confident?",
+                "How do you imagine youself in a parallel universe?",
+                "What brings you peace?",
+                "What was the last thing you were excited about?",
+                "What's the most pain you've been in that wasn't physical?",
+                "How would you describe me to a stranger?",
+                "What do you need to hear right now?"
+            ];
 
-</body>
+            console.log(questions.length + " questions successfully loaded!");
 
-</html>
+        };
+    </script>
+</body></html>
+
